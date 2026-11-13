@@ -1,0 +1,31 @@
+{
+  "name": "irona-consultants-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "IRONA Consultants website and opportunities portal",
+  "main": "server.js",
+  "engines": { "node": "24.x" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test",
+    "db:migrate:dry-run": "node scripts/migrate-to-mongodb.js",
+    "db:migrate:apply": "node scripts/migrate-to-mongodb.js --apply",
+    "db:migrate:files:dry-run": "node scripts/migrate-files-to-gridfs.js",
+    "db:migrate:files:apply": "node scripts/migrate-files-to-gridfs.js --apply",
+    "db:apply-validators": "node scripts/apply-validators.js",
+    "db:restore:dry-run": "node scripts/restore-mongodb-backup.js",
+    "db:explain": "node scripts/explain-queries.js",
+    "admin:reset-password": "node scripts/reset-admin-password.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "express": "^5.0.1",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.12.0",
+    "multer": "^2.0.2",
+    "nodemailer": "^10.5.0"
+  }
+}
